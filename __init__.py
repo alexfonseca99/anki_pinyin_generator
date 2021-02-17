@@ -5,7 +5,7 @@ from aqt.qt import *
 
 def pinyin_gen():
     #Encontrar ids das cartas. Pode-se mudar a o argumento para filtrar as cartas a encontrar
-    licao = getText("Tag:") #Receber input
+    licao = getText("Lição:") #Receber input
     filter = "tag:licao" + str(licao[0])
     showInfo("%s" % filter)
     cids = mw.col.find_cards(filter)
