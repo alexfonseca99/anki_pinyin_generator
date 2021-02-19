@@ -5,6 +5,6 @@ Add-on de Anki que recebe uma tag, vai buscar ao Google Translate o pinyin de to
 
 - Pode ser atualizado para receber outras línguas que não chinês.
 
-- Depende de uma API não oficial https://pypi.org/project/googletrans/
+- Depende de uma API não oficial ~~https://pypi.org/project/googletrans/~~ https://pypi.org/project/google-trans-new/ (problemas de estabilidade e era muito lento)
 
 - Deve ser colocado na pasta "addons21" onde está instalado o programa. Todas as dependências externas estão incluídas. 
