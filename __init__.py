@@ -1,11 +1,11 @@
-import googletrans
+from google_trans_new import google_translator
 from aqt import mw
 from aqt.utils import showInfo, getText
 from aqt.qt import *
 
 def pinyin_gen():
     #Encontrar ids das cartas. Pode-se mudar a o argumento para filtrar as cartas a encontrar
-    licao = getText("Lição:") #Receber input
+    licao = getText("Tag:") #Receber input
     filter = "tag:licao" + str(licao[0])
     showInfo("%s" % filter)
     cids = mw.col.find_cards(filter)
@@ -26,14 +26,13 @@ def pinyin_gen():
     """
 
     # Editar as cartas
-    Translator = googletrans.Translator()
+    Translator = google_translator()
     for i in range(len(caracteres)):
-        traducao_cn = Translator.translate(caracteres[i], dest="zh-cn", src="zh-cn")
-        traducao_pt = Translator.translate(caracteres[i], dest="pt", src="zh-cn")
-        pinyin = traducao_cn.pronunciation.lower()
+        traducao_pt = Translator.translate(caracteres[i], lang_tgt="pt", lang_src="zh", pronounce=True)
+        pinyin = traducao_pt[1].lower()
         card = mw.col.getCard(cids[i])
         note = card.note()
-        note["Back"] = pinyin + "  -  " + traducao_pt.text.lower()
+        note["Back"] = pinyin + "  -  " + traducao_pt[0].lower()
         note.flush()
     showInfo("Sucesso!")
     #mw.reset()
