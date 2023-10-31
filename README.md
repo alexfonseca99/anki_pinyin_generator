@@ -1,5 +1,5 @@
 # anki_pinyin_generator
-Add-on de Anki que recebe uma tag, vai buscar ao Google Translate o pinyin de todas as cartas com essa tag e o coloca na parte da resposta da carta.
+Add-on de Anki que vai buscar ao Google Translate o pinyin dos caracteres numa carta.
 
 - Pode ser atualizado para receber filtros gerais em vez de apenas tags.
 
